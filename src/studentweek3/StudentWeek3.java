@@ -17,7 +17,9 @@ public class StudentWeek3 {
     public static void main(String[] args) {
         Student s1 = new Student();
         s1.setFirstName("John");
-        s1.setID(4);        // TODO code application logic here
+        s1.setID(4);    
+        
+        System.out.println("See you again");// TODO code application logic here
     }
     
 }
