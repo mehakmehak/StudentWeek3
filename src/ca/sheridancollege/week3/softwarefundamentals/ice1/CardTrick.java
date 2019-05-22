@@ -11,6 +11,9 @@ package ca.sheridancollege.week3.softwarefundamentals.ice1;
  * for the match to the user's card. To be used as starting code in ICE 1
  * @author sheetal
  */
+import java.util.Random;
+import java.util.Scanner;
+
 public class CardTrick {
     
     public static void main(String[] args)
@@ -20,13 +23,60 @@ public class CardTrick {
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            
+            System.out.println("Pick any card ? ");
+            
+            Scanner input = new Scanner(System.in);
+            int card1 =input.nextInt();
+            
+            Scanner in = new Scanner(System.in);
+            String suit1 =in.nextLine();
+            
+            
+            //random no, from 1-13
+            Random rand = new Random();
+            int value = rand.nextInt((13-1) + 1) + 1;
+            c.setValue(value);
+            
+            //random no. from 0 to 3.
+            int val = rand.nextInt((3-0) + 1) + 0;
+            c.setSuit(Card.SUITS[val]);
+            
+            //print the suit & the value of a card.
+            System.out.println(c.getSuit()+" " +c.getValue());
+            
+            //Add it to MagicHand Array of Card.
+            magicHand[i]=c;
+            
+            for(int a = 0; a<magicHand.length; a++) {
+             if (card1 == magicHand[a].getValue())
+             {
+                System.out.println("This card number is matched");  
+             } 
+             else 
+             { 
+                System.out.println("This card number is not matched"); 
+             }
+             
+              if (suit1 == magicHand[a].getSuit())
+             { 
+                 System.out.println("This suit is matched"); 
+             } 
+             else 
+             { 
+                System.out.println("This suit is not matched");
+            
+             }
+            break;
         }
+        }
+    }
+    }
+   
         
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
         //Then report the result here
-    }
     
-}
+    
+
